@@ -4,17 +4,20 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { ProductDetailsPage } from "./pages/ProductDetails";
 import "./globals.css";
+import { Layout } from "./components/Layout";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />}></Route>
-        <Route
-          path="/products/:productId"
-          element={<ProductDetailsPage />}
-        ></Route>
-      </Routes>
-    </BrowserRouter>
+    <Layout>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />}></Route>
+          <Route
+            path="/products/:productId"
+            element={<ProductDetailsPage />}
+          ></Route>
+        </Routes>
+      </BrowserRouter>
+    </Layout>
   </React.StrictMode>
 );
